@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+        #sidebar {
+            width: 250px;
+            background: #343a40;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #sidebar h1 {
+            margin: 20px 0;
+        }
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+        #sidebar ul li {
+            margin: 15px 0;
+        }
+        #sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        #sidebar ul li a:hover {
+            background: #495057;
+        }
+        #main-content {
+            flex: 1;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        .notebook {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .notebook h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <h1>André</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notebooks.html">Notebooks</a></li>
+                <li><a href="https://www.linkedin.com/in/andreboldrin/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="https://drive.google.com/file/d/1dRNBA11PwpMCjW78WFBoBdxlHw9WIxnd/view?usp=sharing"target="_blank">CV</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="main-content">
+        <h2>Notebooks</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3><a href="MAL.html" target="_blank">Anime Popularity Analysis </a></h3>
+                        <p>This analysis explores the popularity of anime by leveraging data from MyAnimeList. By extracting and processing information on the top 500 most popular anime, we categorize them based on episode count and analyze their scores and member counts. </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3><a href="Bitcoin_price_vs_Interest_analysis.html" target="_blank">Bitcoin Price vs Interest Analysis </a></h3>
+                        <p>This project investigates the relationship between Bitcoin prices and search interest over time. By integrating historical price data and Google Trends search metrics, we conduct correlation analysis and develop a linear regression model to assess the impact of public interest on Bitcoin's market value.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3><a href="Project_Gutenberg.html" target="_blank">Analysis of Project Gutenberg Books </a></h3>
+                        <p>This project explores the analysis of vocabulary in Project Gutenberg books. By leveraging natural language processing techniques, it consolidates and analyzes text data</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3>Notebook 4</h3>
+                        <p>Description for Notebook 4</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3>Notebook 5</h3>
+                        <p>Description for Notebook 5</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3>Notebook 6</h3>
+                        <p>Description for Notebook 6</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3>Notebook 7</h3>
+                        <p>Description for Notebook 7</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3>Notebook 8</h3>
+                        <p>Description for Notebook 8</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3>Notebook 9</h3>
+                        <p>Description for Notebook 9</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="notebook">
+                        <h3>Notebook 10</h3>
+                        <p>Description for Notebook 10</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
