@@ -1,0 +1,144 @@
+---
+layout: default
+title: André Boldrin
+lang: en
+translation: /pt/
+---
+
+<div class="gateway">
+  <p class="gateway-intro">Hi, I'm André.</p>
+
+  <div class="gateway-options">
+    <div class="gateway-column">
+      <a class="gateway-card" href="/cv">
+        <h2>CV</h2>
+        <p class="gateway-subtitle">(Curriculum Vitae)</p>
+        <p>Background, experience and work portfolio.</p>
+      </a>
+
+      <div class="gateway-image-frame">
+        <svg class="gateway-image" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="8" y="6" width="84" height="118" rx="3" fill="none" stroke="#333" stroke-width="2"/>
+          <path d="M70 6 L92 28 L70 28 Z" fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="27" cy="26" r="8" fill="none" stroke="#333" stroke-width="1.6"/>
+          <line x1="42" y1="22" x2="62" y2="22" stroke="#333" stroke-width="1.6"/>
+          <line x1="42" y1="30" x2="58" y2="30" stroke="#333" stroke-width="1.6" opacity="0.6"/>
+          <line x1="18" y1="48" x2="82" y2="48" stroke="#333" stroke-width="1.4" opacity="0.8"/>
+          <line x1="18" y1="57" x2="82" y2="57" stroke="#333" stroke-width="1.4" opacity="0.5"/>
+          <line x1="18" y1="66" x2="70" y2="66" stroke="#333" stroke-width="1.4" opacity="0.5"/>
+          <line x1="18" y1="84" x2="82" y2="84" stroke="#333" stroke-width="1.4" opacity="0.8"/>
+          <line x1="18" y1="93" x2="82" y2="93" stroke="#333" stroke-width="1.4" opacity="0.5"/>
+          <line x1="18" y1="102" x2="66" y2="102" stroke="#333" stroke-width="1.4" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="gateway-column">
+      <a class="gateway-card" href="/blog">
+        <h2>Drafts</h2>
+        <p>Drafts, sketches, blogging, learning&nbsp;exposed, poems - chaos.</p>
+      </a>
+
+      <div class="gateway-image-frame">
+        <img class="gateway-image gateway-image-photo" src="/assets/images/drafting-life-sketch.png" alt="Gesture-drawing style sketch of a figure reaching upward">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .gateway {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+
+  .gateway-intro {
+    font-size: 1.1rem;
+    color: #585656;
+    margin-bottom: 2.5rem;
+  }
+
+  .gateway-options {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .gateway-column {
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .gateway-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 160px;
+    padding: 2rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f3f2f2;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-sizing: border-box;
+  }
+
+  .gateway-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+  }
+
+  .gateway-card h2 {
+    margin: 0 0 0.6rem;
+    color: #043468;
+  }
+
+  .gateway-card .gateway-subtitle {
+    margin: 0 0 0.6rem;
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: #888;
+  }
+
+  .gateway-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #585656;
+  }
+
+  .gateway-image {
+    width: 100px;
+    height: 130px;
+  }
+
+  .gateway-image-frame {
+    background-color: #faf9f6;
+    border: 1px solid #e6e3db;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+
+  .gateway-image-frame .gateway-image {
+    display: block;
+  }
+
+  .gateway-image-photo {
+    width: auto;
+    height: 130px;
+    max-width: 100%;
+    border-radius: 4px;
+  }
+</style>

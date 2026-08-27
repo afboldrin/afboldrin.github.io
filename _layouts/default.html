@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #fbfefe; 
+      }
+
+      header, footer {
+        background: rgba(255, 255, 255, 0.9); /* Lighter transparency */
+        color: #333;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Even subtler shadow */
+        font-size: 0.9em; /* Smaller font size */
+      }
+
+      header a, footer a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 8px;
+        font-size: 1em;
+      }
+
+      header a:hover, footer a:hover {
+        text-decoration: underline;
+      }
+
+      .lang-toggle-wrap {
+        position: fixed;
+        top: 14px;
+        right: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        z-index: 100;
+      }
+
+      .lang-toggle {
+        display: flex;
+        align-items: stretch;
+        width: 74px;
+        height: 30px;
+        border-radius: 999px;
+        background: #eef3f2;
+        border: 1px solid #d5e2e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .lang-note {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #eef3f2;
+        border: 1px solid #d5e2e0;
+        color: #5b7573;
+        font-size: 0.85em;
+        cursor: help;
+      }
+
+      .lang-note-bubble {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 8px;
+        width: 200px;
+        background: #1f4c4a;
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: normal;
+        letter-spacing: normal;
+        line-height: 1.4;
+        padding: 0.55rem 0.7rem;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(4px);
+        transition: opacity 0.15s ease, transform 0.15s ease;
+      }
+
+      .lang-note:hover .lang-note-bubble,
+      .lang-note:focus .lang-note-bubble {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .lang-toggle-label {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.68em;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        color: #1f4c4a !important;
+        text-decoration: none !important;
+        user-select: none;
+        transition: background-color 0.15s ease, color 0.15s ease;
+      }
+
+      a.lang-toggle-label {
+        cursor: pointer;
+      }
+
+      a.lang-toggle-label:hover {
+        background-color: #dcebe9;
+      }
+
+      .lang-toggle-static span.lang-toggle-label {
+        cursor: default;
+      }
+
+      .lang-toggle[data-active="pt"] .lang-toggle-pt,
+      .lang-toggle[data-active="en"] .lang-toggle-en {
+        background: linear-gradient(135deg, #1f4c4a, #2f8f8a);
+        color: #fff !important;
+      }
+
+      @media (max-width: 480px) {
+        .lang-toggle-wrap {
+          top: 8px;
+          right: 8px;
+        }
+
+        .lang-toggle {
+          width: 64px;
+          height: 26px;
+        }
+
+        .lang-toggle-label {
+          font-size: 0.62em;
+        }
+
+        .lang-note {
+          width: 17px;
+          height: 17px;
+          font-size: 0.75em;
+        }
+      }
+
+      footer a {
+        font-size: 1.2em; /* Icon size slightly bigger than text */
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      .blog-posts {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .blog-post {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+      }
+
+      .blog-post a {
+        text-decoration: none;
+        color: #043468;
+      }
+
+      .blog-post a:hover {
+        text-decoration: underline;
+      }
+
+      .date {
+        font-size: 0.9em;
+        color: #585656;
+      }
+
+      /* Global link styles */
+      a {
+        color: #4758f0de; /* Set your desired link color */
+        text-decoration: none; /* Optional: remove underline */
+      }
+
+      a:hover {
+        color: #1e7e34; /* Set color for when the link is hovered */
+        text-decoration: underline; /* Optional: underline on hover */
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1><a href="{% if page.lang == 'pt' %}/pt/{% else %}/{% endif %}">André</a></h1>
+      <nav>
+        {% if page.section == "cv" %}
+          {% if page.lang == "pt" %}
+            <a href="/pt/about">Sobre</a>
+            <a href="/pt/cv-projects">Projetos</a>
+          {% else %}
+            <a href="/about">About</a>
+            <a href="/cv-projects">Projects</a>
+          {% endif %}
+        {% elsif page.section == "draft" or page.layout == "post" %}
+          <a href="/about-draft">About</a>
+          <a href="/blog">Drafts</a>
+          <a href="/projects">Personal Projects</a>
+        {% else %}
+          {% if page.lang == "pt" %}
+            <a href="/pt/about">Sobre</a>
+            <a href="/pt/cv-projects">Projetos</a>
+          {% else %}
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+          {% endif %}
+        {% endif %}
+      </nav>
+    </header>
+
+    {% assign lang_active = page.lang | default: "en" %}
+    {% if page.translation %}
+      <div class="lang-toggle-wrap">
+        {% if lang_active == "pt" %}
+          <span class="lang-note" tabindex="0">ⓘ
+            <span class="lang-note-bubble">A tradução para português cobre só a seção de CV por ora.</span>
+          </span>
+        {% endif %}
+        <div class="lang-toggle" data-active="{{ lang_active }}">
+          {% if lang_active == "pt" %}
+            <span class="lang-toggle-label lang-toggle-pt">PT</span>
+            <a class="lang-toggle-label lang-toggle-en" href="{{ page.translation }}">EN</a>
+          {% else %}
+            <a class="lang-toggle-label lang-toggle-pt" href="{{ page.translation }}">PT</a>
+            <span class="lang-toggle-label lang-toggle-en">EN</span>
+          {% endif %}
+        </div>
+      </div>
+    {% elsif page.section == "draft" or page.layout == "post" %}
+      <div class="lang-toggle-wrap">
+        <div class="lang-toggle lang-toggle-static" data-active="{{ lang_active }}" title="Ainda não disponível em outro idioma por aqui">
+          <span class="lang-toggle-label lang-toggle-pt">PT</span>
+          <span class="lang-toggle-label lang-toggle-en">EN</span>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Main Content -->
+    <div class="container">
+      {{ content }}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <a href="mailto:afboldrin@usp.br">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://linkedin.com/in/andreboldrin/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="http://lattes.cnpq.br/8295588943757592" target="_blank">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </footer>
+  </body>
+</html>
