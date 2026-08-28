@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -211,9 +213,11 @@
         {% if page.section == "cv" %}
           {% if page.lang == "pt" %}
             <a href="/pt/about">Sobre</a>
+            <a href="/pt/cv">CV</a>
             <a href="/pt/cv-projects">Projetos</a>
           {% else %}
             <a href="/about">About</a>
+            <a href="/cv">CV</a>
             <a href="/cv-projects">Projects</a>
           {% endif %}
         {% elsif page.section == "draft" or page.layout == "post" %}
