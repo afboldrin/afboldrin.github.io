@@ -1,0 +1,156 @@
+---
+layout: default
+title: Blog
+section: draft
+---
+
+<div class="container">
+  <h1>Drafts</h1>
+  <p class="page-subtitle">Drafts, sketches, blogging, learning&nbsp;exposed, poems - chaos.</p>
+
+  <!-- Latest Post Preview -->
+  <section id="latest-post">
+    <h2>Latest Post</h2>
+    {% assign latest_post = site.posts | first %}
+    <div class="latest-post-preview">
+      <h3><a href="{{ latest_post.url }}">{{ latest_post.title }}</a></h3>
+      <p class="date">{{ latest_post.date | date: "%b %d, %Y" }}</p>
+      <p>{{ latest_post.excerpt | strip_html | truncatewords: 45 }} <a href="{{ latest_post.url }}">Read more</a></p>
+    </div>
+  </section>
+</div>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+
+  .page-subtitle {
+    text-align: center;
+    color: #585656;
+    margin-top: -0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  #latest-post {
+    margin-bottom: 3rem;
+  }
+
+  #latest-post h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+  }
+
+  .latest-post-preview {
+    background-color: #f3f2f2;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0.95;
+  }
+
+  .latest-post-preview h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #333;
+    opacity: 0.85; /* Slightly faded title */
+  }
+
+  .latest-post-preview h3 a {
+    text-decoration: none;
+    color: #003950;
+    transition: color 0.3s;
+  }
+
+  .latest-post-preview h3 a:hover {
+    color: #000;
+  }
+
+  .latest-post-preview .date {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0.5rem 0;
+  }
+
+  .latest-post-preview p {
+    font-size: 1rem;
+    color: #333;
+    opacity: 0.7; /* More transparent for the excerpt */
+  }
+
+  .latest-post-preview p a {
+    text-decoration: none;
+    color: #580202;
+  }
+
+  .latest-post-preview p a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+
+  <!-- Divider -->
+  <hr class="section-divider">
+
+<!-- Topics List -->
+<section id="topics">
+  <h2>Topics</h2>
+  <p class="topics-list">
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+      {% if category[0] != 'project' %}
+        <a href="/categories/{{ category[0] | slugify }}/">{{ category[0] | downcase }}</a>{% if forloop.last == false %}, {% endif %}
+      {% endif %}
+    {% endfor %}
+  </p>
+</section>
+
+
+<!-- Tools List -->
+
+<section id="tools">
+  <h2>Tools</h2>
+  <p class="tools-list">
+    {% assign tools = site.posts | map: "tools" | flatten | uniq | sort %}
+    {% for tool in tools %}
+      <a href="/tools/{{ tool | slugify }}/">{{ tool | downcase }}</a>{% if forloop.last == false %}, {% endif %}
+    {% endfor %}
+  </p>
+</section>
+
+<!-- Languages List -->
+<section id="languages">
+  <h2>Languages</h2>
+  <p class="languages-list">
+    {% assign languages = site.posts | map: "language" | uniq | sort %}
+    {% for language in languages %}
+      <a href="/languages/{{ language | downcase | slugify }}/">{{ language }}</a>{% if forloop.last == false %}, {% endif %}
+    {% endfor %}
+  </p>
+</section>
+
+
+  <!-- Divider -->
+  <hr class="section-divider">
+
+<!-- Blog Posts List -->
+<section id="blog-posts">
+  <h2>All Posts</h2>
+  <ul class="blog-posts">
+    {% for post in site.posts %}
+      <li class="blog-post">
+        <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+
+        <!-- Post Title with Stylish Language Indicator -->
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="language-badge">{{ post.language | capitalize }}</span> <!-- Language after title -->
+      </li>
+    {% endfor %}
+  </ul>
+</section>
